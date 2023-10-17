@@ -16,6 +16,9 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
 
     var pokemonImage = ""
+    var pokemonName = ""
+    var pokemonWeight = ""
+    var pokemonType = ""
 
     private lateinit var binding: ActivityMainBinding
     private val button get() = binding.btnGetRandomPokemon
@@ -51,7 +54,9 @@ class MainActivity : AppCompatActivity() {
             ) {
 
                 pokemonImage = json.jsonObject.getJSONObject("sprites").getJSONObject("other").getJSONObject("official-artwork").getString("front_default")
-
+                pokemonName = json.jsonObject.getString("name")
+                pokemonWeight = json.jsonObject.getString("weight")
+                pokemonType = json.jsonObject.getJSONArray("types").getJSONObject(0).getJSONObject("type").getString("name")
             }
 
             override fun onFailure(
@@ -87,7 +92,12 @@ class MainActivity : AppCompatActivity() {
             Glide.with(this)
                 .load(pokemonImage)
                 .fitCenter()
-                .into(binding.ivLogo)
+                .into(image)
+
+            textName.setText(pokemonName)
+            textWeight.setText(pokemonWeight)
+            textType.setText(pokemonType)
+
 
 
 
