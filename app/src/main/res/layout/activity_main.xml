@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.10"
+        app:srcCompat="@drawable/pokemon_logo" />
+
+    <Button
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintLeft_toLeftOf="@id/ivLogo"
+        app:layout_constraintRight_toRightOf="@id/ivLogo"
+        android:text = "Get a random pokemon!"
+        android:fontFamily="@font/game_font"
+        android:layout_margin="25dp"
+        android:textSize="20dp" />
+    
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="80dp"
+        android:text="name"
+        android:gravity="center_horizontal"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo"
+        app:layout_constraintRight_toRightOf="@id/ivLogo"
+        app:layout_constraintLeft_toLeftOf="@id/ivLogo"
+        android:layout_margin="25dp"/>
+    
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="type"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo"
+        android:layout_margin="25dp"
+        />
+    
+    <TextView
+        android:id="@+id/tvWeight"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo"
+        android:layout_margin="25dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
